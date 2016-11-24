@@ -1,24 +1,24 @@
 ## BOILERPLATE
 
 ####Start with
-```javascript
+```node
 npm run super-install
 ```
 
 It's going to install yarn (global) and some packages, including a ton of webpack stuff
 Choose between React or Angular and let it install a full set of usefull libs for your chosen framework !
 
-```javascript
+```node
 yarn run build
 ```
 for production build
 
-```javascript
+```node
 yarn start
 ```
 to init server
 
-```javascript
+```node
 webpack --watch
 ```
 to watch code
