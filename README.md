@@ -1,4 +1,4 @@
-# BOILERPLATE
+## BOILERPLATE
 
 ####Start with npm run super-install
 
@@ -9,9 +9,9 @@ Choose between React or Angular and let it install a full set of usefull libs fo
 ####yarn start to init server
 ####webpack --watch to watch code
 
-#TODO :
+##TODO :
 - Angular side
 - Both side
-- Css framework
+- Choose css framework
 - Webpack 2
 - Better install
