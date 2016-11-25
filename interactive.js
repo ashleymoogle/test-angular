@@ -20,6 +20,7 @@ const angular = [
     "angular-translate-loader-static-files",
     "angular-translate",
     "angular-ui-bootstrap",
+    "angular-route",
     "angular-ui-router",
     "oclazyload",
     "angular"
@@ -33,7 +34,7 @@ inquirer.prompt(
             name: "js",
             message: "What to install ?",
             choices: [
-                "React",
+                "react",
                 new inquirer.Separator(),
                 "angular",
                 new inquirer.Separator(),
@@ -46,7 +47,7 @@ inquirer.prompt(
         let libs
         let cmd = ""
         switch (answers.js) {
-            case "React":
+            case "react":
                 libs = react
                 break
             case "angular":
@@ -64,7 +65,7 @@ inquirer.prompt(
         }
         console.log(cmd)
         shell.exec(cmd)
-        shell.exec('mv react src')
+        shell.exec('mv '+ answers.js +' src')
         //shell.exec('rm -rf ' + answers.js)
     }
 );

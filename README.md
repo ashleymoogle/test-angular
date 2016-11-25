@@ -24,7 +24,6 @@ webpack --watch
 to watch code
 
 ##TODO :
-- Angular side
 - Both side
 - Choose css framework
 - Webpack 2

@@ -7,9 +7,8 @@
     "npm": "3.10.8"
   },
   "scripts": {
-    "super-install": "npm run yarn-install && yarn && yarn run framework",
+    "super-install": "npm run yarn-install && yarn && yarn run framework && npm run build",
     "yarn-install": "npm install yarn@0.16.1 -g",
-    "yarn": "yarn",
     "framework": "node interactive.js",
     "build": "webpack --progress",
     "start": "webpack-dev-server --host 0.0.0.0",
