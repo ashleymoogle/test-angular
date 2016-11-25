@@ -17,7 +17,7 @@ for production build
 ```
 yarn start
 ```
-to init server
+to init server AND watch (with hot module replacement)
 
 ```
 webpack --watch
