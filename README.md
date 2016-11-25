@@ -5,7 +5,8 @@
 npm run super-install
 ```
 
-It's going to install yarn (global) and some packages, including a ton of webpack stuff
+It's going to install yarn (global) and some packages, including a ton of webpack stuff.
+
 Choose between React or Angular and let it install a full set of usefull libs for your chosen framework !
 
 ```
