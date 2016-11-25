@@ -6,7 +6,8 @@ exports.devServer = function (options) {
             historyApiFallback: true,
             hot: true,
             inline: true,
-            contentBase: 'build'
+            contentBase: 'build',
+            publicPath: '/dist/'
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin({

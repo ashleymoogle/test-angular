@@ -45,6 +45,14 @@ let common = {
                     path.resolve(__dirname, "src"),
                 ],
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader"),//happypack/loader?id=babel'],
+                include: [
+                    path.resolve(__dirname, "src"),
+                ],
+                exclude: /node_modules/,
             }
         ]
     },
