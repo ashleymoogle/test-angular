@@ -5,6 +5,7 @@ import {browserHistory} from 'react-router'
 
 import ReactContainer from './components/ReactContainer'
 import Store from './store/store.js'
+import './components/styles.css'
 
 // Create Store and populate with data
 const store = new Store()

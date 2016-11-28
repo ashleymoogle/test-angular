@@ -59,11 +59,13 @@ inquirer.prompt(
         let i = libs.length-1
         while(i >= 0){
             if(i === libs.length -1)
-                cmd += "yarn add "
+                //Fucking yarn crash with shelljs, fallback on npm
+                cmd += "npm install "
             cmd += libs[i] + " "
             i--
         }
         console.log(cmd)
+        //shell.exec('rm -r yarn.lock')
         shell.exec(cmd)
         shell.exec('mv '+ answers.js +' src')
         //shell.exec('rm -rf ' + answers.js)

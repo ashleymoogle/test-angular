@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-const validate = require('webpack-validator')
 const path = require('path')
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -29,39 +28,42 @@ let common = {
         publicPath: "/build/dist/",
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.html$/,
-                loaders: ['html'],//happypack/loader?id=html'],
-                include: [
-                    path.resolve(__dirname, "src")
-                ],
-                exclude: /node_modules/
+                use: ['html-loader'],//happypack/loader?id=html'],
+                options: {
+                    modules: true
+                }
             },
             {
                 test: /\.js$/,
-                loaders: ['babel'],//happypack/loader?id=babel'],
-                include: [
-                    path.resolve(__dirname, "src"),
-                ],
-                exclude: /node_modules/,
+                use: ['babel-loader'],//happypack/loader?id=babel'],
+                options: {
+                    modules: true
+                }
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader"),//happypack/loader?id=babel'],
-                include: [
-                    path.resolve(__dirname, "src"),
-                ],
-                exclude: /node_modules/,
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: ['style-loader'],
+                    loader:[
+                        {
+                            loader:"css-loader",
+                        },
+                        {
+                            loader: "postcss-loader"
+                        }
+                    ],
+                    publicPath: "/build/dist" // Overrides output.publicPath
+                })
             }
         ]
     },
-    postcss: [
-        autoprefixer({ browsers: ['last 2 versions'] })
-    ],
     resolve: {
-        modulesDirectories: [
-            path.resolve('./node_modules'),
+        modules: [
+            path.resolve(__dirname, "src"),
+            "node_modules"
         ],
         alias: {
             "lodash": "lodash/lodash.min",
@@ -73,7 +75,18 @@ let common = {
     stats: {
     },
     plugins: [
-        new ExtractTextPlugin('[name].bundle.css'),
+        new webpack.LoaderOptionsPlugin({
+           options:{
+               postcss: [
+                   autoprefixer({ browsers: ['last 2 versions'] })
+               ],
+           }
+        }),
+        new ExtractTextPlugin({
+            filename:'[name].bundle.css',
+            disable:false,
+            allChunks:true
+        }),
         /*new HappyPack({
             id:'html',
             loaders: ['html']
@@ -113,7 +126,6 @@ if (TARGET === 'build') {
                 sourceMap: false,
                 cache: false,
             }),*/
-            new webpack.optimize.DedupePlugin(),
             new CopyWebpackPlugin([
                 {from: 'src/assets', to: '../assets'},
                 {from: 'src/index.html', to: '../index.html'}
@@ -122,6 +134,8 @@ if (TARGET === 'build') {
         ]
     })
 }
+
+
 
 if ((TARGET === 'start') || (TARGET === undefined)) {
     config = merge(common, {
@@ -139,4 +153,4 @@ if ((TARGET === 'start') || (TARGET === undefined)) {
     config = merge(common, developmentConfig.devServer())
 }
 
-module.exports = validate(config)
+module.exports = config

@@ -1,0 +1,8 @@
+.wrapper {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
