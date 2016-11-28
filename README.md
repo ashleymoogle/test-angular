@@ -1,4 +1,5 @@
 ## BOILERPLATE
+Inquirer doesnt work very well with git bash terminals on windows. Consider using powershell.
 
 ####Start with
 ```
@@ -26,6 +27,7 @@ to watch code
 
 ##TODO :
 - Both side
+- Unit testing (karma, phantomjs, jasmine)
 - Choose css framework
 - Webpack 2
 - Better install
