@@ -5,6 +5,7 @@ With a few commands you're ready to code with all the latest stuff without all t
 Enjoy :)
 
 *Inquirer doesnt work very well with git bash terminals on windows. Consider using powershell.
+
 *If your node is not up to date and yarn asks you a recent version, edit the scripts in package.json by adding --ignore-engines after each yarn command.
 
 ####Start with
@@ -15,6 +16,8 @@ npm run super-install
 It's going to install yarn (global) and some packages, including a ton of webpack stuff.
 
 Choose between React or Angular and let it install a full set of useful libs for your chosen framework !
+
+*On Git bash windows, the arrows do indeed work, you just don't see it :(
 
 ```
 yarn run build
@@ -44,4 +47,3 @@ to watch code
 - Webpack 2
 - App react upgraded : css included and one more component with a few examples to help start
 - reverted to npm install from yarn add because of unknown and disturbing error (watch you package.json in case libs are not registered in dependencies. You can find them in consts in interactive.js)
--
