@@ -5,6 +5,7 @@ With a few commands you're ready to code with all the latest stuff without all t
 Enjoy :)
 
 *Inquirer doesnt work very well with git bash terminals on windows. Consider using powershell.
+*If your node is not up to date and yarn asks you a recent version, edit the scripts in package.json by adding --ignore-engines after each yarn command.
 
 ####Start with
 ```
