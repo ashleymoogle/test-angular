@@ -7,13 +7,13 @@
     "npm": "3.10.8"
   },
   "scripts": {
-    "super-install": "npm run yarn-install && rm -r yarn.lock && yarn && yarn run framework && yarn build",
+    "super-install": "npm run yarn-install && yarn && yarn run framework && yarn build",
     "yarn-install": "npm install yarn -g",
     "framework": "babel-node interactive.js",
     "build": "webpack --progress",
     "start": "webpack-dev-server --host 0.0.0.0",
     "watch": "webpack --watch",
-    "test": "karma start"
+    "test": "jest"
   },
   "private": true,
   "dependencies": {
@@ -63,7 +63,6 @@
     "webpack": "2.1.0-beta.27",
     "webpack-dev-server": "2.1.0-beta.12",
     "webpack-merge": "^0.14.1",
-    "webpack-uglify-parallel": "^0.1.2",
-    "yarn": "0.16.1"
+    "webpack-uglify-parallel": "^0.1.2"
   }
 }

@@ -37,12 +37,14 @@ to watch code
 ##TODO :
 - Batter starting app angular
 - Both side
-- Unit testing (karma, phantomjs, jasmine)
+- Unit testing angular (karma, phantomjs, jasmine ?)
 - Choose css framework (less ? sass ?)
 - Better install
 
 
 #Changelog :
+##0.2.1
+- Jest added for react testing
 ##0.2
 - Webpack 2
 - App react upgraded : css included and one more component with a few examples to help start

@@ -4,16 +4,19 @@ const shell = require('shelljs')
 //PUT THEM IN REVERSE ORDER BECAUSE OF THE INVERSED WHILE LATER
 
 const react = [
-    "react-dom",
-    "react-draggable",
-    "react-i18next",
-    "react-router",
-    "mobx-react",
-    "mobx",
-    "axios",
-    "i18next-xhr-backend",
-    "i18next",
-    "react"
+    "react-test-renderer --save-dev",
+    "babel-jest --save-dev",
+    "jest --save-dev",
+    "react-dom --save",
+    "react-draggable --save",
+    "react-i18next --save",
+    "react-router --save",
+    "mobx-react --save",
+    "mobx --save",
+    "axios --save",
+    "i18next-xhr-backend --save",
+    "i18next --save",
+    "react --save"
 ]
 
 const angular = [
