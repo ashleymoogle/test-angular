@@ -1,0 +1,14 @@
+.item-single{
+    border: 2px solid pink
+}
+
+.item-single div:first-child{
+    font-weight:bolder;
+    font-size:large;
+    text-decoration:underline;
+}
+
+.item-single div:last-child{
+    font-style:italic;
+    font-weight:bolder;
+}

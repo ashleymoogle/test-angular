@@ -10,15 +10,20 @@ import config from './modules/app/config/config'
 import run from './modules/app/config/run'
 
 import mainCtrl from './modules/app/mainCtrl'
-let app = angular.module('app', [
+import {itemSingle} from './components'
+
+import './modules/app/main.css'
+
+const app = angular.module('app', [
     'ui.router',
     'ngRoute',
     'ui.bootstrap',
     'pascalprecht.translate',
     'oc.lazyLoad'
 ])
-app.config(config)
-app.run(run)
-app.controller('mainCtrl', mainCtrl)
+    .config(config)
+    .run(run)
+    .controller('mainCtrl', mainCtrl)
+    .component('itemSingle', itemSingle)
 
 export default app

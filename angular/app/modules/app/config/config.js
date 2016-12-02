@@ -1,7 +1,7 @@
 import index from '../main.html'
 export default function config($stateProvider, $urlRouterProvider){
     console.log('config')
-    $urlRouterProvider.otherwise('/bla')
+    $urlRouterProvider.otherwise('/')
     $stateProvider
         .state("home", {
             url: "/",
