@@ -38,7 +38,7 @@ to watch code
 - Both side
 - Unit testing angular (karma, phantomjs, jasmine ?)
 - Choose css framework (less ? sass ?)
-- Better install
+- Better install, especially on windows
 
 
 #Changelog :
@@ -50,7 +50,7 @@ to watch code
 ##0.2.1
 - Jest added for react testing
 
-##0.2
+##0.2.0
 - Webpack 2
 - App react upgraded : css included and one more component with a few examples to help start
 - reverted to npm install from yarn add because of unknown and disturbing error (watch you package.json in case libs are not registered in dependencies. You can find them in consts in interactive.js)
