@@ -52,5 +52,5 @@ to watch code
 
 ##0.2.0
 - Webpack 2
-- App react upgraded : css included and one more component with a few examples to help start
+- App react upgraded : css included and one more component with a few examples to help you start
 - reverted to npm install from yarn add because of unknown and disturbing error (watch you package.json in case libs are not registered in dependencies. You can find them in consts in interactive.js)
