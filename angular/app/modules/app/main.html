@@ -1,1 +1,13 @@
-<button ng-click="vm.goTest()">Display hello</button>
+<div>
+    <form name="itemForm">
+        <div class="test-form-input">
+            <label for="test-form-name">Name : </label>
+            <input id="test-form-name" ng-model='vm.model.name' type="text"/>
+        </div>
+        <div class="test-form-input">
+            <label for="test-form-description">Description :</label>
+            <textarea id="test-form-description" ng-model="vm.model.desc"></textarea>
+        </div>
+        <button ng-disable="itemForm.$invalid">Add 1</button>
+    </form>
+</div>

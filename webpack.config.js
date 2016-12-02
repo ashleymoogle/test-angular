@@ -82,11 +82,20 @@ let common = {
                ],
            }
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity,
+            filename: 'vendor.bundle.js'
+        }),
         new ExtractTextPlugin({
             filename:'[name].bundle.css',
             disable:false,
             allChunks:true
         }),
+        new CopyWebpackPlugin([
+            {from: 'src/assets', to: '../assets'},
+            {from: 'src/index.html', to: '../index.html'}
+        ])
         /*new HappyPack({
             id:'html',
             loaders: ['html']
@@ -107,29 +116,39 @@ if (TARGET === 'build') {
               'process.env': {
                 'NODE_ENV': JSON.stringify('production')
               }
+            })
+            ,
+            new webpack.LoaderOptionsPlugin({
+                minimize: true,
+                debug: false
+            }),
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false,
+                    screw_ie8: true,
+                    conditionals: true,
+                    unused: true,
+                    comparisons: true,
+                    sequences: true,
+                    dead_code: true,
+                    evaluate: true,
+                    if_return: true,
+                    join_vars: true,
+                },
+                output: {
+                    comments: false
+                },
             }),
             /*new UglifyJsParallelPlugin({
-                workers: os.cpus().length, // usually having as many workers as cpu cores gives good results
-                minimize: true,
-                mangle: true,
-                compress: {
-                    warnings: false
-                },
-                sourceMap: false,
-                cache: false,
-            }),*/
-            /*new webpack.optimize.UglifyJsPlugin({
-
-                minimize:true,
-                mangle: true,
-                compress: false,
-                sourceMap: false,
-                cache: false,
-            }),*/
-            new CopyWebpackPlugin([
-                {from: 'src/assets', to: '../assets'},
-                {from: 'src/index.html', to: '../index.html'}
-            ])
+             workers: os.cpus().length, // usually having as many workers as cpu cores gives good results
+             minimize: true,
+             mangle: true,
+             compress: {
+             warnings: false
+             },
+             sourceMap: false,
+             cache: false,
+             }),*/
             //new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js")
         ]
     })
