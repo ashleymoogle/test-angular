@@ -42,6 +42,9 @@ to watch code
 
 
 #Changelog :
+##0.4.0
+- Mochajs, Chai and Chai-as-promised added with two examples in the /test folder
+
 ##0.3.0
 - Angular app redone : now has one component and css. This provide a good idea of a possible architecture for a component based angular app.
 - More optimize plugins added to webpack, especially for production (uglify, commonchunk...)
