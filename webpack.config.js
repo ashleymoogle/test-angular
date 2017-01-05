@@ -10,10 +10,14 @@ const TARGET = process.env.npm_lifecycle_event || 'build'
 
 const developmentConfig = require('./webpack/development')
 
-//Parallel shiet
-//var HappyPack = require('happypack');
-//var os = require('os');
-//var UglifyJsParallelPlugin = require('webpack-uglify-parallel');
+//Hack to make it work with Karma
+const commonChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
+    name: 'vendor',
+    minChunks: Infinity,
+    filename: 'vendor.bundle.js'
+});
+
+commonChunkPlugin.__KARMA_IGNORE__ = true
 
 //CSS LOADER IS ON 0.14.5 FOR PERF SAKE
 
@@ -82,11 +86,6 @@ let common = {
                ],
            }
         }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: Infinity,
-            filename: 'vendor.bundle.js'
-        }),
         new ExtractTextPlugin({
             filename:'[name].bundle.css',
             disable:false,
@@ -95,17 +94,10 @@ let common = {
         new CopyWebpackPlugin([
             {from: 'src/assets', to: '../assets'},
             {from: 'src/index.html', to: '../index.html'}
-        ])
-        /*new HappyPack({
-            id:'html',
-            loaders: ['html']
-        }),
-        new HappyPack({
-            id:'babel',
-            loaders: ['babel']
-        })*/
+        ]),
+        commonChunkPlugin
     ]
-}
+};
 
 let config = common
 
@@ -116,8 +108,7 @@ if (TARGET === 'build') {
               'process.env': {
                 'NODE_ENV': JSON.stringify('production')
               }
-            })
-            ,
+            }),
             new webpack.LoaderOptionsPlugin({
                 minimize: true,
                 debug: false
@@ -139,17 +130,6 @@ if (TARGET === 'build') {
                     comments: false
                 },
             }),
-            /*new UglifyJsParallelPlugin({
-             workers: os.cpus().length, // usually having as many workers as cpu cores gives good results
-             minimize: true,
-             mangle: true,
-             compress: {
-             warnings: false
-             },
-             sourceMap: false,
-             cache: false,
-             }),*/
-            //new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js")
         ]
     })
 }
