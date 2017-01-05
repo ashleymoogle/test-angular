@@ -74,7 +74,7 @@ let common = {
         }
     },
     externals: {
-        //"moment": "moment",
+        "angular": "angular",
     },
     stats: {
     },
@@ -94,8 +94,7 @@ let common = {
         new CopyWebpackPlugin([
             {from: 'src/assets', to: '../assets'},
             {from: 'src/index.html', to: '../index.html'}
-        ]),
-        commonChunkPlugin
+        ])
     ]
 };
 
@@ -130,6 +129,7 @@ if (TARGET === 'build') {
                     comments: false
                 },
             }),
+            //commonChunkPlugin //Bug with karma-webpack
         ]
     })
 }

@@ -1,4 +1,4 @@
-export default function mainCtrl($scope, $http, $state) {
+export default function mainCtrl() {
     console.log('controller')
 
     this.items = [
@@ -31,4 +31,4 @@ export default function mainCtrl($scope, $http, $state) {
     }
 }
 
-mainCtrl.$inject = ['$scope', '$http', '$state']
+mainCtrl.$inject = []

@@ -1,5 +1,4 @@
 const webpackConfig = require('./webpack.config.js')
-webpackConfig.entry = {}
 webpackConfig.plugins = webpackConfig.plugins.filter(function (plugin) {
         return !plugin.__KARMA_IGNORE__;
 })
@@ -9,14 +8,17 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
         files: [
             'node_modules/babel-polyfill/dist/polyfill.js',
-            { pattern: 'test-context.js', watched: true }
+            'node_modules/angular/angular.js',
+            'node_modules/angular-mocks/angular-mocks.js',
+            'build/dist/app.bundle.js',
+            { pattern: 'test-context.js', watched: false }
         ],
         logLevel: config.LOG_INFO,
-        frameworks: ['mocha'],
+        frameworks: ['mocha', 'chai'],
         preprocessors: {
             'test-context.js': ['webpack']
         },
-        reporters: ['mocha', 'chai'],
+        reporters: ['mocha'],
         //port: 9876, 3030
         colors: true,
         singleRun: true,
@@ -30,6 +32,7 @@ module.exports = function (config) {
         plugins: [
             'karma-webpack',
             'karma-mocha',
+            'karma-chai',
             'karma-phantomjs-launcher',
             'karma-mocha-reporter'
         ]
