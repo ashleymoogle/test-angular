@@ -45,6 +45,7 @@ to watch code
 - Karma : Use *yarn test* on angular to use karma-webpack. Every test must be named *.spec.js ( *-spec.js for react-jest) and placed in __tests __
 Tests can be written in ES6 using mocha/chai/chai-as-promised and they run on PhantomJS. An example is available in the __tests __ folder.
 - Babel presets set to latest
+
 ##0.4.0
 - Mochajs, Chai and Chai-as-promised added with two examples in the /test folder
 
