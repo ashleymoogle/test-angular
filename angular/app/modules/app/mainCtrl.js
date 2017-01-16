@@ -1,5 +1,5 @@
 export default function mainCtrl() {
-    console.log('controller')
+    //console.log('controller')
 
     this.items = [
         {

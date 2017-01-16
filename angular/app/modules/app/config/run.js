@@ -1,5 +1,5 @@
 export default function run ($state){
-    console.log('run')
+    //console.log('run')
 }
 
 run.$inject = ['$state']

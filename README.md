@@ -35,12 +35,16 @@ yarn run watch
 to watch code
 
 ##TODO :
-- Both side
-- Choose css framework (less ? sass ?)
+- Better and more powerful Workers
+- Css modules
+- Ui toolkit
 - Better install, especially on windows
 
 
 #Changelog :
+##0.5.0
+- Service worker that caches bundles and the framework (for both angular and react). Change the const version every time you want to tinker with it (so it can regenerate cache). Useful for an offline app !
+
 ##0.4.1
 - Karma : Use *yarn test* on angular to use karma-webpack. Every test must be named *.spec.js ( *-spec.js for react-jest) and placed in __tests __
 Tests can be written in ES6 using mocha/chai/chai-as-promised and they run on PhantomJS. An example is available in the __tests __ folder.

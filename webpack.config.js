@@ -75,6 +75,7 @@ let common = {
     },
     externals: {
         "angular": "angular",
+        "react": "react"
     },
     stats: {
     },
@@ -93,7 +94,8 @@ let common = {
         }),
         new CopyWebpackPlugin([
             {from: 'src/assets', to: '../assets'},
-            {from: 'src/index.html', to: '../index.html'}
+            {from: 'src/index.html', to: '../index.html'},
+            {from: 'src/sw.js', to: '../sw.js'}
         ])
     ]
 };

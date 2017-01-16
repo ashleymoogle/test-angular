@@ -2,9 +2,11 @@ import moment from 'moment'
 
 export default class itemSingle {
     constructor($translate) {
-        console.log(this.item)
         this.trans = $translate
-        //console.log(this.geniusMethodYay("yolo"))
+    }
+
+    $onInit() {
+        //this.geniusMethodYay(this.item)
     }
 
     geniusMethodYay = (args) => {

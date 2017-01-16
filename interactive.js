@@ -20,14 +20,14 @@ const react = [
 ]
 
 const angular = [
-    "angular-mocks --save-dev",
-    "angular-translate-loader-static-files --save",
-    "angular-translate --save",
-    "angular-ui-bootstrap --save",
-    "angular-route --save",
-    "angular-ui-router --save",
-    "oclazyload --save",
-    "angular --save"
+    "angular-mocks",
+    "angular-translate-loader-static-files ",
+    "angular-translate ",
+    "angular-ui-bootstrap ",
+    "angular-route ",
+    "angular-ui-router ",
+    "oclazyload ",
+    "angular "
 ]
 
 inquirer.prompt(
@@ -40,9 +40,7 @@ inquirer.prompt(
             choices: [
                 "react",
                 new inquirer.Separator(),
-                "angular",
-                new inquirer.Separator(),
-                "Both"
+                "angular"
             ]
         }
     ])
