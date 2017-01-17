@@ -20,14 +20,14 @@ const react = [
 ]
 
 const angular = [
-    "angular-mocks",
-    "angular-translate-loader-static-files ",
-    "angular-translate ",
-    "angular-ui-bootstrap ",
-    "angular-route ",
-    "angular-ui-router ",
-    "oclazyload ",
-    "angular "
+    "angular-mocks --save-dev",
+    "angular-translate-loader-static-files --save",
+    "angular-translate --save",
+    "angular-ui-bootstrap --save",
+    "angular-route --save",
+    "angular-ui-router --save",
+    "oclazyload --save",
+    "angular --save"
 ]
 
 inquirer.prompt(
