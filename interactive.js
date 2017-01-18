@@ -18,11 +18,9 @@ const react = [
 ]
 
 const reactDev = [
-    "babel-plugin-react-require",
     "react-test-renderer",
     "babel-jest",
     "jest",
-    "babel-preset-react",
     "eslint-plugin-react"
 ]
 
