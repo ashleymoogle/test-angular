@@ -4,6 +4,8 @@ You can choose your framework between React and Angular. A sample app in avaliab
 With a few commands you're ready to code with all the latest stuff without all the hassle of configuring everything.
 Enjoy :)
 
+*Change the const DEV to true in inquirer.js if you want the dependencies to be saved in your package.json
+
 *Inquirer doesnt work very well with git bash terminals on windows. Consider using powershell.
 
 *If your node is not up to date and yarn asks you a recent version, edit the scripts in package.json by adding --ignore-engines after each yarn command.

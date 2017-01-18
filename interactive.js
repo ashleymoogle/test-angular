@@ -3,31 +3,53 @@ const shell = require('shelljs')
 
 //PUT THEM IN REVERSE ORDER BECAUSE OF THE INVERSED WHILE LATER
 
+const DEV = true;
+
 const react = [
-    "react-test-renderer --save-dev",
-    "babel-jest --save-dev",
-    "jest --save-dev",
-    "react-dom --save",
-    "react-draggable --save",
-    "react-i18next --save",
-    "react-router --save",
-    "mobx-react --save",
-    "mobx --save",
-    "axios --save",
-    "i18next-xhr-backend --save",
-    "i18next --save",
-    "react --save"
+    "react-dom",
+    "react-i18next",
+    "react-router",
+    "react-redux",
+    "redux",
+    "axios",
+    "i18next-xhr-backend",
+    "i18next",
+    "react"
+]
+
+const reactDev = [
+    "babel-plugin-react-require",
+    "react-test-renderer",
+    "babel-jest",
+    "jest",
 ]
 
 const angular = [
-    "angular-mocks --save-dev",
-    "angular-translate-loader-static-files --save",
-    "angular-translate --save",
-    "angular-ui-bootstrap --save",
-    "angular-route --save",
-    "angular-ui-router --save",
-    "oclazyload --save",
-    "angular --save"
+    "angular-translate-loader-static-files",
+    "angular-translate",
+    "angular-ui-bootstrap",
+    "angular-route",
+    "angular-ui-router",
+    "oclazyload",
+    "angular"
+]
+
+const angularDev = [
+    "angular-mocks",
+    "ng-annotate-loader",
+    "ng-annotate-webpack-plugin",
+    "phantomjs-prebuilt",
+    "karma-webpack",
+    "karma-mocha-reporter",
+    "karma-mocha",
+    "karma-firefox-launcher",
+    "karma-chrome-launcher",
+    "karma-chai",
+    "karma-spec-reporter",
+    "karma",
+    "chai-as-promised",
+    "chai",
+    "mocha",
 ]
 
 inquirer.prompt(
@@ -45,31 +67,52 @@ inquirer.prompt(
         }
     ])
     .then((answers) => {
-        // Use user feedback for... whatever!!
-        let libs
-        let cmd = ""
-        switch (answers.js) {
-            case "react":
-                libs = react
-                break
-            case "angular":
-                libs = angular
-                break
-            default:
-                libs = react.concat(angular)
-        }
-        let i = libs.length-1
-        while(i >= 0){
-            if(i === libs.length -1)
+            let libs, libsDev, cmd = "", cmdDev = "", pkg = "", pkgDev = ""
+            switch (answers.js) {
+                case "react":
+                    libs = react
+                    libsDev = reactDev
+                    break
+                case "angular":
+                    libs = angular
+                    libsDev = angularDev
+                    break
+                default:
+                    libs = react.concat(angular)
+            }
+
+            //Do we want to write in our package.json ?
+            if (!DEV){
+                pkg = "-S"
+                pkgDev = "-D"
+            }
+
+            //install dependencies
+            let i = libs.length-1
+            while(i >= 0){
                 //Fucking yarn crash with shelljs, fallback on npm
-                cmd += "npm install "
-            cmd += libs[i] + " "
-            i--
+                if(i === libs.length -1)
+                    cmd += `npm i ${pkg} `
+                cmd += libs[i] + " "
+                i--
+            }
+
+            //install devDependencies
+            let j = libsDev.length-1
+            while(j >= 0){
+                //Fucking yarn crash with shelljs, fallback on npm
+                if(j === libsDev.length -1)
+                    cmdDev += `npm i ${pkgDev} `
+                cmdDev += libsDev[j] + " "
+                j--
+            }
+            console.log(cmd)
+            //shell.exec('rm -r yarn.lock')
+            shell.exec(cmd)
+            console.log(cmdDev
+            )
+            shell.exec(cmdDev)
+            shell.exec('mv '+ answers.js +' src')
+            //shell.exec('rm -rf ' + answers.js)
         }
-        console.log(cmd)
-        //shell.exec('rm -r yarn.lock')
-        shell.exec(cmd)
-        shell.exec('mv '+ answers.js +' src')
-        //shell.exec('rm -rf ' + answers.js)
-    }
-);
+    );
