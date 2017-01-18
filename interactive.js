@@ -22,6 +22,8 @@ const reactDev = [
     "react-test-renderer",
     "babel-jest",
     "jest",
+    "babel-preset-react",
+    "eslint-plugin-react"
 ]
 
 const angular = [
