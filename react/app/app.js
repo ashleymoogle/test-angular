@@ -17,6 +17,8 @@ store.init()
         ReactDOM.render((
             <ReactContainer store={store}/>
         ), document.getElementById('mount'))
+    }).catch((e) => {
+        setTimeout(()=> { throw e})
     })
 
 window.store = store
