@@ -37,13 +37,17 @@ yarn run watch
 to watch code
 
 ##TODO :
-- Better and more powerful Workers
+- Web workers ? Webpack magic to regenerate cache from service worker at each build
+- Redux instead of mobX ? (React app working with redux from this starter kit here : https://github.com/ashleymoogle/reactRedux)
 - Css modules
 - Ui toolkit
 - Better install, especially on windows
 
 
 #Changelog :
+##0.5.1
+- Service worker moved to another project : https://github.com/ashleymoogle/service-worker-init
+
 ##0.5.0
 - Service worker that caches bundles and the framework (for both angular and react). Change the const version every time you want to tinker with it (so it can regenerate cache). Useful for an offline app !
 
