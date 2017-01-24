@@ -6,8 +6,8 @@
         }
       }
     ],
-    "stage-2",
-    "react"
+    "react",
+    "stage-2"
   ],
   "plugins": ["es6-promise","transform-decorators-legacy","react-require"],
   "env": {

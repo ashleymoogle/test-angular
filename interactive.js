@@ -14,6 +14,8 @@ const react = [
     "axios",
     "i18next-xhr-backend",
     "i18next",
+    "mobx-react",
+    "mobx",
     "react"
 ]
 
@@ -83,8 +85,8 @@ inquirer.prompt(
 
             //Do we want to write in our package.json ?
             if (!DEV){
-                pkg = "-S"
-                pkgDev = "-D"
+                pkg = "-S "
+                pkgDev = "-D "
             }
 
             //install dependencies
@@ -92,7 +94,7 @@ inquirer.prompt(
             while(i >= 0){
                 //Fucking yarn crash with shelljs, fallback on npm
                 if(i === libs.length -1)
-                    cmd += `npm i ${pkg} `
+                    cmd += `npm i ${pkg}`
                 cmd += libs[i] + " "
                 i--
             }
@@ -102,7 +104,7 @@ inquirer.prompt(
             while(j >= 0){
                 //Fucking yarn crash with shelljs, fallback on npm
                 if(j === libsDev.length -1)
-                    cmdDev += `npm i ${pkgDev} `
+                    cmdDev += `npm i ${pkgDev}`
                 cmdDev += libsDev[j] + " "
                 j--
             }

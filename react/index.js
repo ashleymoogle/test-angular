@@ -1,5 +1,5 @@
-require('./index.html')
-require('./app/app')
+import './index.html'
+import './app/app'
 
 /* Hot module replacement */
 if (module.hot) {

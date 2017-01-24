@@ -35,16 +35,17 @@ let common = {
         rules: [
             {
                 test: /\.html$/,
-                use: ['html-loader'],//happypack/loader?id=html'],
-                options: {
-                    modules: true
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        modules: true
+                    }
                 }
             },
             {
                 test: /\.js$/,
-                use: ['babel-loader'],//happypack/loader?id=babel'],
-                options: {
-                    modules: true
+                use: {
+                    loader: 'babel-loader'
                 }
             },
             {
@@ -75,7 +76,11 @@ let common = {
     },
     externals: {
         "angular": "angular",
-        "React": "react"
+        "React": "react",
+        "mobx": "mobx",
+        "moment": "moment",
+        "lodash": "_",
+        "jquery": "$"
     },
     stats: {
     },
@@ -94,8 +99,7 @@ let common = {
         }),
         new CopyWebpackPlugin([
             {from: 'src/assets', to: '../assets'},
-            {from: 'src/index.html', to: '../index.html'},
-            {from: 'src/sw.js', to: '../sw.js'}
+            {from: 'src/index.html', to: '../index.html'}
         ])
     ]
 };
@@ -131,7 +135,7 @@ if (TARGET === 'build') {
                     comments: false
                 },
             }),
-            //commonChunkPlugin //Bug with karma-webpack
+            commonChunkPlugin //Bug with karma-webpack
         ]
     })
 }
