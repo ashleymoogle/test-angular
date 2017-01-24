@@ -45,6 +45,8 @@ to watch code
 
 
 #Changelog :
+##0.6.0
+- Webpack 2.2 ! webpack.config cleaned, mains libs added as external
 ##0.5.1
 - Service worker moved to another project : https://github.com/ashleymoogle/service-worker-init
 
