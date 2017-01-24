@@ -2,8 +2,6 @@ const webpack = require('webpack')
 const path = require('path')
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const chalk = require('chalk');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const TARGET = process.env.npm_lifecycle_event || 'build'
@@ -146,11 +144,6 @@ if ((TARGET === 'start') || (TARGET === undefined)) {
     config = merge(common, {
         debug: true,
         plugins: [
-          new ProgressBarPlugin({
-              format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
-              width:200,
-              clear: false,
-          }),
         ],
         devtool: 'eval'
     })
