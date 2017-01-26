@@ -111,8 +111,7 @@ inquirer.prompt(
             console.log(cmd)
             //shell.exec('rm -r yarn.lock')
             shell.exec(cmd)
-            console.log(cmdDev
-            )
+            console.log(cmdDev)
             shell.exec(cmdDev)
             shell.exec('mv '+ answers.js +' src')
             //shell.exec('rm -rf ' + answers.js)

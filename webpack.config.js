@@ -143,8 +143,7 @@ if (TARGET === 'build') {
 if ((TARGET === 'start') || (TARGET === undefined)) {
     config = merge(common, {
         debug: true,
-        plugins: [
-        ],
+        plugins: [],
         devtool: 'eval'
     })
 

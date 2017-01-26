@@ -56,8 +56,6 @@
     "rollup-loader": "0.0.2",
     "shelljs": "^0.7.5",
     "style-loader": "^0.13.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^2.3.1",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0",
     "webpack-merge": "^0.14.1",
