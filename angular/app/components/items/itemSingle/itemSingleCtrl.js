@@ -10,6 +10,7 @@ export default class itemSingle {
     }
 
     geniusMethodYay = (args) => {
+
         console.log(args)
     }
 }

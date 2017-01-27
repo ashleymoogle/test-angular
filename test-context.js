@@ -1,3 +1,5 @@
+import app from './app/index'
+
 import chai from 'chai'
 import chaiAsPromised from 'chai-as-promised'
 

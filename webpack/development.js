@@ -8,11 +8,6 @@ exports.devServer = function (options) {
             inline: true,
             contentBase: 'build',
             publicPath: '/dist/'
-        },
-        plugins: [
-            new webpack.HotModuleReplacementPlugin({
-                multiStep: true
-            })
-        ]
+        }
     }
 }

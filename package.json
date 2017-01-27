@@ -14,6 +14,7 @@
     "start": "webpack-dev-server --host 0.0.0.0",
     "watch": "webpack --watch",
     "test": "karma start",
+    "test-build": "karma start",
     "test-react": "jest"
   },
   "private": true,

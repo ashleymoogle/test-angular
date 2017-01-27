@@ -8,15 +8,6 @@ const TARGET = process.env.npm_lifecycle_event || 'build'
 
 const developmentConfig = require('./webpack/development')
 
-//Hack to make it work with Karma
-const commonChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    minChunks: Infinity,
-    filename: 'vendor.bundle.js'
-});
-
-commonChunkPlugin.__KARMA_IGNORE__ = true
-
 //CSS LOADER IS ON 0.14.5 FOR PERF SAKE
 
 let common = {
@@ -69,7 +60,7 @@ let common = {
             "node_modules"
         ],
         alias: {
-            "lodash": "lodash/lodash.min",
+            "lodash": "lodash/lodash.min"
         }
     },
     externals: {
@@ -77,8 +68,8 @@ let common = {
         "React": "react",
         "mobx": "mobx",
         "moment": "moment",
-        "lodash": "_",
-        "jquery": "$"
+        "lodash": "lodash",
+        "jquery": "jquery"
     },
     stats: {
     },
@@ -133,21 +124,56 @@ if (TARGET === 'build') {
                     comments: false
                 },
             }),
-            commonChunkPlugin //Bug with karma-webpack
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+                minChunks: Infinity,
+                filename: 'vendor.bundle.js'
+            })
         ]
     })
 }
 
-
-
 if ((TARGET === 'start') || (TARGET === undefined)) {
-    config = merge(common, {
-        debug: true,
-        plugins: [],
-        devtool: 'eval'
+    config = merge.smart(common, {
+        plugins: [
+            new webpack.HotModuleReplacementPlugin({
+                multiStep: true
+            }),
+            //UNCOMMENT TO TEST MINIFICATION
+            /*new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify('production')
+                }
+            }),
+            new webpack.LoaderOptionsPlugin({
+                minimize: true,
+                debug: false
+            }),
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false,
+                    screw_ie8: true,
+                    conditionals: true,
+                    unused: true,
+                    comparisons: true,
+                    sequences: true,
+                    dead_code: true,
+                    evaluate: true,
+                    if_return: true,
+                    join_vars: true,
+                },
+                output: {
+                    comments: false
+                },
+            }),*/
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+                minChunks: Infinity,
+                filename: 'vendor.bundle.js'
+            })],
+        devtool: 'eval',
+        devServer: developmentConfig.devServer().devServer
     })
-
-    config = merge(common, developmentConfig.devServer())
 }
 
 module.exports = config
