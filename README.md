@@ -43,6 +43,5 @@ to watch code
 - [ ] Ui toolkit
 - [ ] Better install, especially on windows
 
-
 ##Changelog : 
 https://github.com/ashleymoogle/starter-kit-js/releases
