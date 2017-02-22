@@ -1,5 +1,10 @@
 ## Test angularjs
 
+First clone the repo and use
+```
+git remote set-url origin <YOUR_REPO>
+```
+Or you can make me a pull request
 ###Installation
 ```
 npm install
