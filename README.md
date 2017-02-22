@@ -43,22 +43,25 @@ You don't have to do everything, go as far as you can.
 - Order by name
 - Order by company name
 - Order by email
+- Filter photos by album
     
 ### Hard :
+- Make an album view with all albums, each redirect to a wall of its own pictures
 - Add a searchbar on the user view that filters the users
 - You can add, edit and delete a post, a user and a photo
 - Everything is in ES6
 - Use most of the best practices
 - Use promises
 - Find a nice way to do the css
+- Deleting or editing an album changes the photos view too
 
 ### Very Hard :
-- Eye-candy
-- Tweak webpack
-- App is fully responsive
 - App is fully optimized (api calls AND ressources call)
-- App is fully documented
+- Eye-candy
+- App is fully responsive
+- Tweak webpack for your needs
 - App is deployed on a server
+- App is fully documented
 
 ### Insane :
 - App has Unit testing
