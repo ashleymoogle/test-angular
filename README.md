@@ -62,3 +62,4 @@ You don't have to do everything, go as far as you can.
 - F*** angular, you did everything but with React, and Redux, why not ?
 - You did everything with experimental apis and JS methods from ES7+
     
+This test repo is made with my starter kit js, tweaked a little : https://github.com/ashleymoogle/starter-kit-js
