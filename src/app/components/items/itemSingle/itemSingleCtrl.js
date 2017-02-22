@@ -11,7 +11,8 @@ export default class itemSingle {
     }
 
     method = (args) => {
-        console.log(args)
+        let myargs = args
+        console.log(myargs)
     }
 }
 

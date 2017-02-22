@@ -1,6 +1,7 @@
-export default function mainCtrl() {
+export default function mainCtrl($timeout) {
 
     //console.log('Sample data')
+
     this.items = [
         {
             "name": "Cat",
@@ -22,7 +23,12 @@ export default function mainCtrl() {
 
     this.addItem = () => {
         //Write the method to add an item
+
+        //sample injection use
+        $timeout(() => {
+            console.log('Item added')
+        })
     }
 }
 
-mainCtrl.$inject = []
+mainCtrl.$inject = ['$timeout']
