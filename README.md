@@ -39,13 +39,14 @@ You don't have to do everything, go as far as you can.
     - Each user will be displayed in a list with their firstname, lastname, company name and email only
     - You can click on a user to display all their informations
     - Add a "Photos" view with a wall of pictures (https://jsonplaceholder.typicode.com/photos)
+    - Add a "Posts" view with all posts displayed (https://jsonplaceholder.typicode.com/posts)
 - Order by name
 - Order by company name
 - Order by email
     
 ### Hard :
 - Add a searchbar on the user view that filters the users
-- You can edit a user and delete a photo
+- You can add, edit and delete a post, a user and a photo
 - Everything is in ES6
 - Use most of the best practices
 - Use promises
