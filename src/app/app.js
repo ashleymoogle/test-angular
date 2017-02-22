@@ -2,9 +2,6 @@ import angular from 'angular'
 import 'angular-ui-router'
 import 'angular-route'
 import 'angular-ui-bootstrap'
-import 'angular-translate'
-import 'angular-translate-loader-static-files'
-import 'oclazyload'
 
 import config from './modules/app/config/config'
 import run from './modules/app/config/run'
@@ -17,13 +14,11 @@ import './modules/app/main.css'
 const app = angular.module('app', [
     'ui.router',
     'ngRoute',
-    'ui.bootstrap',
-    'pascalprecht.translate',
-    'oc.lazyLoad'
+    'ui.bootstrap'
 ])
     .config(config)
     .run(run)
-    .controller('mainCtrl', mainCtrl)
+    .controller('mainCtrl', mainCtrll)
     .component('itemSingle', itemSingle)
 
 export default app

@@ -1,47 +1,58 @@
-## Starter Kit for quick prototyping with your favorite framework :)
-All included : from package download with yarn to build with webpack 2.
-You can choose your framework between React and Angular. A sample app in avaliable for each one with all basic needs : routes, structure, translations, flux...
-With a few commands you're ready to code with all the latest stuff without all the hassle of configuring everything.
-Enjoy :)
+## Test angularjs
 
-*Change the const DEV to true in inquirer.js if you want the dependencies to be saved in your package.json
-
-*Inquirer doesnt work very well with git bash terminals on windows. Consider using powershell.
-
-*If your node is not up to date and yarn asks you a recent version, edit the scripts in package.json by adding --ignore-engines after each yarn command.
-
-####Start with
+###Installation
 ```
-npm run super-install
+npm install
 ```
 
-It's going to install yarn (global) and some packages, including a ton of webpack stuff.
-
-Choose between React or Angular and let it install a full set of useful libs for your chosen framework !
-
-*On Git bash windows, the arrows do indeed work, you just don't see it :(
+###How to run the app
 
 ```
-yarn run build
+npm start
 ```
-for production build
+Then go to the url provided
 
 ```
-yarn start
+npm build
 ```
-to init server AND watch (with hot module replacement)
+For manual webpack build
 
-```
-yarn run watch
-```
-to watch code
+Alternatively you can also use html script tags to include deps and run the app in local or with another web server.
 
-##TODO :
-- [x] Web workers ? Webpack magic to regenerate cache from service worker at each build (moved to https://github.com/ashleymoogle/service-worker-init)
-- [ ] Redux instead of mobX ? (React app working with redux from this starter kit here : https://github.com/ashleymoogle/react-redux-sample)
-- [ ] Css modules
-- [ ] Ui toolkit
-- [ ] Better install, especially on windows
+This sample app use john papa's best practices in ES6 : https://github.com/rwwagner90/angular-styleguide-es6
 
-##Changelog : 
-https://github.com/ashleymoogle/starter-kit-js/releases
+## Tests :
+### Easy :
+- Fix the App
+- Add 2 more views and display random stuff in them
+- Add a menu to switch between views
+
+### Medium :
+- Make use of externals api :
+    - Make an app with a user view (you can fetch your users here : https://jsonplaceholder.typicode.com/users)
+    - Each user will be displayed in a list with their firstname and lastname only
+    - You can click on a user to display more informations
+    - Add a "Photos" view with a wall of pictures (https://jsonplaceholder.typicode.com/photos)
+    
+### Hard :
+- You can edit a user and delete a photo
+- Everything is in ES6
+- Use most of the best practices
+- Use promises
+- Found a nice way to do the css
+
+### Very Hard :
+- Eye-candy
+- Tweak webpack
+- App is fully responsive
+- App is fully optimized (api calls AND ressources call)
+- App is fully documented
+
+### Insane :
+- App has Unit testing
+- App has behaviour testing
+
+### Absolute DOOM :
+- Fuck angular, you did everything but with React, and Redux, why not ?
+- And you did everything with experimental apis and JS methods from ES7+
+    

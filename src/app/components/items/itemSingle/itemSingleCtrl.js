@@ -5,12 +5,12 @@ export default class itemSingle {
         this.trans = $translate
     }
 
-    $onInit() {
-        //this.geniusMethodYay(this.item)
+    onInit() {
+        //ne s'affiche pas, pourquoi ?
+        this.method(this.item)
     }
 
-    geniusMethodYay = (args) => {
-
+    method = (args) => {
         console.log(args)
     }
 }

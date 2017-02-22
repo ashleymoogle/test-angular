@@ -65,8 +65,6 @@ let common = {
     },
     externals: {
         "angular": "angular",
-        "React": "react",
-        "mobx": "mobx",
         "moment": "moment",
         "lodash": "lodash",
         "jquery": "jquery"

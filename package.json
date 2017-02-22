@@ -1,5 +1,5 @@
 {
-  "name": "projectName",
+  "name": "Test-angular",
   "description": "",
   "version": "0.5.2",
   "engines": {
@@ -7,24 +7,20 @@
     "npm": "3.10.8"
   },
   "scripts": {
-    "super-install": "npm run yarn-install && yarn && yarn run framework && yarn build",
-    "yarn-install": "npm install yarn -g",
-    "framework": "babel-node interactive.js",
     "build": "webpack --progress",
     "start": "webpack-dev-server --host 0.0.0.0",
-    "watch": "webpack --watch",
-    "test": "karma start",
-    "test-build": "karma start",
-    "test-react": "jest"
+    "watch": "webpack --watch"
   },
   "private": true,
   "dependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2",
+    "angular-ui-router": "^0.4.2",
     "document-ready-promise": "^3.0.1",
     "es6-promise": "^4.0.5",
     "jquery": "^3.1.1",
     "lodash": "^4.15.0",
-    "moment": "^2.17.0",
-    "toastr": "^2.1.2"
+    "moment": "^2.17.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
@@ -49,9 +45,11 @@
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-promise": "^2.0.0",
     "eslint-plugin-standard": "^2.0.0",
-    "extract-text-webpack-plugin": "^2.0.0-rc1",
+    "extract-text-webpack-plugin": "^2.0.0-rc3",
     "html-loader": "^0.4.4",
-    "inquirer": "^1.2.3",
+    "ng-annotate-loader": "^0.2.0",
+    "ng-annotate-webpack-plugin": "^0.2.1-pre",
+    "phantomjs-prebuilt": "^2.1.14",
     "postcss-loader": "^1.1.1",
     "resolve-url-loader": "^1.6.0",
     "rollup-loader": "0.0.2",

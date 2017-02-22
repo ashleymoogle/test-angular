@@ -1,4 +1,4 @@
-import ctrl from './itemSingleCtrl'
+import ctrl from './itemSingleCtrlz'
 import temp from './itemSingle.html'
 import './itemSingle.css'
 

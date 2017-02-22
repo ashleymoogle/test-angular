@@ -1,6 +1,6 @@
 export default function mainCtrl() {
-    //console.log('controller')
 
+    //console.log('Sample data')
     this.items = [
         {
             "name": "Cat",
@@ -17,17 +17,11 @@ export default function mainCtrl() {
     ]
 
     this.model = {
-        "name": "",
-        "desc": ""
+        //This is the ngModel
     }
 
     this.addItem = () => {
-        console.log('add item')
-        this.items.push(this.model)
-        this.model = {
-            "name": "",
-            "desc": ""
-        }
+        //Write the method to add an item
     }
 }
 
