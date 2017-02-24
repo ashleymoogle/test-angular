@@ -40,9 +40,9 @@ You don't have to do everything, go as far as you can.
     - You can click on a user to display all their informations
     - Add a "Photos" view with a wall of pictures (https://jsonplaceholder.typicode.com/photos)
     - Add a "Posts" view with all posts displayed (https://jsonplaceholder.typicode.com/posts)
-- Order by name
-- Order by company name
-- Order by email
+- Add a button to order users by name
+- Add a button to order users by company name
+- Add a button to order users by email
 - Filter photos by album
     
 ### Hard :
