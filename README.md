@@ -28,6 +28,12 @@ This sample app use john papa's best practices in ES6 : https://github.com/rwwag
 
 ## Tests :
 You don't have to do everything, go as far as you can.
+When you're done, kill the web server and type 
+```
+npm build
+```
+To generate a clean build.
+
 ### Easy :
 - Fix the App : it should add items correctly
 - Add 2 more views and display random stuff in them
