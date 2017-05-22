@@ -21,7 +21,7 @@ Then go to the url provided
 ```
 npm build
 ```
-For manual webpack build
+For manual build
 
 Alternatively you can also use html script tags to include dependencies and run the app in local or with another web server.
 
