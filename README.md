@@ -5,12 +5,13 @@ First clone the repo and use
 git remote set-url origin <YOUR_REPO>
 ```
 Or you can make me a pull request
-###Installation
+
+### Installation
 ```
 npm install
 ```
 
-###How to run the app
+### How to run the app
 
 ```
 npm start
